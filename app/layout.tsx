@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { IBM_Plex_Serif, Mona_Sans } from "next/font/google";
 import "./globals.css";
+import Navbar from "@/components/Navbar";
 
 
 const ibmPlexSerif = IBM_Plex_Serif({
@@ -29,9 +30,13 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${ibmPlexSerif.variable} ${monaSans.variable} relative font-sans antialiased`}
     >
-      <body className="min-h-full flex flex-col">{children}</body>
+      <body className={`${ibmPlexSerif.variable} ${monaSans.variable} relative font-sans antialiased`}
+        >
+          <Navbar />
+          {children}
+          
+          </body>
     </html>
   );
 }
